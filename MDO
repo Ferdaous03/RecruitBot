@@ -1,0 +1,43 @@
+# Define a list of questions
+questions = [
+    "Avez-vous de l'expérience en tant qu'agent commercial ? ",
+    "Avez-vous travaillé dans le secteur de la vente auparavant ? ",
+    "Êtes-vous disposé à voyager fréquemment pour rencontrer des clients potentiels ? ",
+    "Avez-vous déjà utilisé un logiciel de gestion de la relation client (CRM) dans le cadre de votre travail ? ",
+    "Avez-vous déjà atteint ou dépassé des objectifs de vente dans vos emplois précédents ? ",
+    "Êtes-vous à l'aise pour négocier des contrats de vente et gérer les objections des clients ? ",
+    "Êtes-vous flexible en termes d'horaires de travail, y compris le week-end si nécessaire ? ",
+]
+
+# Initialize a list to store the user's answers
+answers = []
+
+# Function to ask questions and store answers
+def ask_questions():
+    for question in questions:
+        response = input(question)
+        if response.lower() == "oui":
+            answers.append("Oui")
+        elif response.lower() == "non":
+            answers.append("Non")
+        else:
+            print("Veuillez répondre par 'oui' ou 'non'.")
+            # Repeat the question
+            response = input(question)
+            if response.lower() == "oui":
+                answers.append("Oui")
+            elif response.lower() == "non":
+                answers.append("Non")
+            else:
+                print("Réponse invalide. La réponse est enregistrée comme 'Non'.")
+
+# Start the conversation
+print("Bienvenue dans le Recruitbot. Répondez aux questions suivantes avec oui ou non :")
+
+# Ask the questions and store answers
+ask_questions()
+
+# Display the user's answers
+print("Merci d'avoir répondu. nous vous contacterons dès que possible,voici vos réponses :")
+for i, question in enumerate(questions):
+    print(f"{question} : {answers[i]}")
